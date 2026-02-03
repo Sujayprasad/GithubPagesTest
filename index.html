@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My GitHub Page</title>
+  <meta name="description" content="A simple, clean HTML page ready for GitHub Pages." />
+  <style>
+    :root {
+      --bg: #0f172a;      /* slate-900 */
+      --card: #111827;    /* gray-900 */
+      --text: #e5e7eb;    /* gray-200 */
+      --muted: #9ca3af;   /* gray-400 */
+      --accent: #38bdf8;  /* sky-400 */
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 10% -10%, #1f2937 0%, transparent 60%),
+                  radial-gradient(1200px 600px at 90% 10%, #020617 0%, transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+    }
+    .card {
+      width: min(900px, 92vw);
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)) , var(--card);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    header {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    h1 {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      margin: 0;
+      letter-spacing: 0.2px;
+    }
+    .tag {
+      color: var(--muted);
+      margin-top: 6px;
+    }
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      margin-left: 16px;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+    }
+    nav a:hover { border-bottom-color: var(--accent); }
+    main { margin-top: 28px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px; }
+    @media (max-width: 720px) { main { grid-template-columns: 1fr; } }
+    section {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    h2 { margin-top: 0; font-size: 1.2rem; }
+    p { line-height: 1.6; color: #e6e7eb; }
+    ul { padding-left: 18px; }
+    li { margin: 8px 0; }
+    .cta {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #38bdf8, #22d3ee);
+      color: #020617;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    footer {
+      margin-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .links a { color: var(--muted); margin-right: 12px; text-decoration: none; }
+    .links a:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <header>
+      <div>
+        <h1>Welcome 👋</h1>
+        <div class="tag">This page is live via GitHub Pages</div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="about">
+        <h2>About</h2>
+        <p>
+          This is a lightweight, single-file HTML page that works perfectly with
+          <strong>GitHub Pages</strong>. No build tools, no frameworks — just commit
+          and publish.
+        </p>
+        <a class="cta" href="https://pages.github.com/" target="_blank" rel="noreferrer">Learn GitHub Pages</a>
+      </section>
+
+      <section id="projects">
+        <h2>What you can add</h2>
+        <ul>
+          <li>Personal portfolio or resume</li>
+          <li>Project links and demos</li>
+          <li>Documentation or landing page</li>
+          <li>Blog (later, if you want)</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer id="contact">
+      <div>© <span id="year"></span> Your Name</div>
+      <div class="links">
+        <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="mailto:you@example.com">Email</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
